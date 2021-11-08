@@ -1,0 +1,68 @@
+.game {
+  position: relative;
+  width: calc(3 * var(--cell-size));
+  border: 2px solid black;
+
+  --cell-size: 100px;
+  --player-size: calc(0.8 * var(--cell-size));
+  --base-shift: calc(
+      (var(--cell-size) - var(--player-size)) / 2
+    );
+}
+
+.game__field {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game__cell {
+  box-sizing: border-box;
+  height: var(--cell-size);
+  width: var(--cell-size);
+  border: 1px dashed #000;
+}
+
+.game__player {
+  position: absolute;
+  left: var(--base-shift);
+  top: var(--base-shift);
+  height: var(--player-size);
+  width: var(--player-size);
+  border-radius: 50%;
+  background-color: black;
+}
+
+.game__player--col--1 {
+  left: var(--base-shift);
+}
+
+.game__player--col--2 {
+  left: calc(var(--cell-size) + var(--base-shift));
+}
+
+.game__player--col--3 {
+  left: calc(2 * var(--cell-size) + var(--base-shift));
+}
+
+.game__player--row--1 {
+  top: var(--base-shift);
+}
+
+.game__player--row--2 {
+  top: calc(var(--cell-size) + var(--base-shift));
+}
+
+.game__player--row--3 {
+  top: calc(2 * var(--cell-size) + var(--base-shift));
+}
+
+.game__player--color--red {
+  background-color: red;
+}
+
+.game__player--color--green {
+  background-color: green;
+}
+.game__player--color--blue {
+  background-color: blue;
+}
