@@ -1,68 +1,79 @@
-.game {
-  position: relative;
-  width: calc(3 * var(--cell-size));
-  border: 2px solid black;
-
-  --cell-size: 100px;
-  --player-size: calc(0.8 * var(--cell-size));
-  --base-shift: calc(
-      (var(--cell-size) - var(--player-size)) / 2
-    );
+.game__field, .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: 24px;
+  line-height: 1.5;
 }
 
+.game__field, .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: 24px;
+  line-height: 1.5;
+}
+
+.title {
+  padding: 0;
+}
+@media (min-width: 500px) {
+  .title {
+    background-color: yellow;
+  }
+}
+@media (min-width: 700px) {
+  .title {
+    background-color: yellowgreen;
+  }
+}
+
+.game {
+  position: relative;
+  width: 210px;
+  border: 2px solid black;
+}
 .game__field {
   display: flex;
   flex-wrap: wrap;
 }
-
 .game__cell {
+  width: 70px;
+  height: 70px;
   box-sizing: border-box;
-  height: var(--cell-size);
-  width: var(--cell-size);
   border: 1px dashed #000;
 }
-
 .game__player {
-  position: absolute;
-  left: var(--base-shift);
-  top: var(--base-shift);
-  height: var(--player-size);
-  width: var(--player-size);
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
+  position: absolute;
+  left: 7px;
+  top: 7px;
   background-color: black;
 }
-
-.game__player--col--1 {
-  left: var(--base-shift);
-}
-
-.game__player--col--2 {
-  left: calc(var(--cell-size) + var(--base-shift));
-}
-
-.game__player--col--3 {
-  left: calc(2 * var(--cell-size) + var(--base-shift));
-}
-
 .game__player--row--1 {
-  top: var(--base-shift);
+  top: 7px;
 }
-
 .game__player--row--2 {
-  top: calc(var(--cell-size) + var(--base-shift));
+  top: 77px;
 }
-
 .game__player--row--3 {
-  top: calc(2 * var(--cell-size) + var(--base-shift));
+  top: 147px;
 }
-
+.game__player--col--1 {
+  left: 7px;
+}
+.game__player--col--2 {
+  left: 77px;
+}
+.game__player--col--3 {
+  left: 147px;
+}
 .game__player--color--red {
-  background-color: red;
+  background-color: #f00;
 }
-
 .game__player--color--green {
-  background-color: green;
+  background-color: #080;
 }
 .game__player--color--blue {
-  background-color: blue;
+  background-color: #00f;
 }
+
+/*# sourceMappingURL=styles.css.map */
